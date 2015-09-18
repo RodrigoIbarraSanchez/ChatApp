@@ -2,7 +2,7 @@ angular.module('starter.controllers', ['firebase'])
 
 .controller('ChatsCtrl', ['$scope', '$firebase', '$rootScope',
     function ($scope, $firebase, $rootScope) {
-        var ref = new Firebase('https://rt-chat.firebaseio.com/');
+        var ref = new Firebase('https://chatapprodrigoibarra.firebaseio.com/');
         var sync = $firebase(ref);
         $scope.chats = sync.$asArray();
 
@@ -21,7 +21,7 @@ angular.module('starter.controllers', ['firebase'])
 
 .controller('AccountCtrl', function ($scope, $rootScope) {
     $scope.login = function () {
-        var ref = new Firebase('https://rt-chat.firebaseio.com');
+        var ref = new Firebase('https://chatapprodrigoibarra.firebaseio.com/');
         ref.authWithOAuthPopup('twitter', function (error, authData) {
             if (error) {
                 alert('There was an error.');
